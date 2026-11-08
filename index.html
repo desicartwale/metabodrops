@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaboDrops™ — Liquid Metabolism Drops for Your Morning Coffee</title>
+	<meta name="keywords" content="Metabodrops ,Metabodrops Buy,Metabodrops Order ,Order Metabodrops>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Warm, Inviting, Wellness Colors */
+            --primary: #8B5A2B; /* Warm Coffee Brown */
+            --primary-hover: #6B4423;
+            --accent: #556B2F; /* Warm Olive Green */
+            --bg-main: #FDFBF7; /* Soft Cream/Off-white */
+            --bg-white: #FFFFFF;
+            --bg-alt: #F4EBE1; /* Lighter Beige */
+            --text-dark: #2C1E16; /* Very Dark Brown */
+            --text-light: #594A42; /* Medium Brown */
+            --text-muted: #8C7A70;
+            --border-color: #E6D5C3;
+            --success: #658354;
+            --alert-bg: #FFF3CD;
+            --alert-border: #FFEEBA;
+            --alert-text: #856404;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h1 { font-size: 2.5rem; letter-spacing: -0.02em; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p { color: var(--text-light); margin-bottom: 1rem; }
+        .section-label {
+            color: var(--accent); font-weight: 700; font-size: 0.875rem; text-transform: uppercase;
+            letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 1.5rem; font-weight: 600; border-radius: var(--radius-md);
+            transition: all 0.2s ease; cursor: pointer; text-align: center; border: 2px solid transparent;
+        }
+        .btn-primary { background-color: var(--primary); color: var(--bg-white); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline { background-color: transparent; color: var(--primary); border-color: var(--primary); }
+        .btn-outline:hover { background-color: var(--bg-alt); }
+        .btn-full { width: 100%; }
+
+        /* Layout Grids */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        
+        @media (max-width: 992px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+        }
+
+        /* Header */
+        header { background-color: var(--bg-white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.75rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 1.25rem; align-items: center; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-disclaimer { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--bg-white); flex-direction: column; padding: 1rem; box-shadow: var(--shadow-md);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .nav-disclaimer { display: none; }
+        }
+
+        /* Sections */
+        section { padding: 5rem 0; }
+        .section-alt { background-color: var(--bg-white); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-main) 100%); padding: 6rem 0; }
+        .badge-text { display: inline-block; background: var(--bg-white); color: var(--accent); font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 2rem; margin-bottom: 1.5rem; border: 1px solid var(--border-color); letter-spacing: 0.05em; }
+        .hero-disclaimer { font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; font-style: italic; }
+        .hero-image-placeholder { background-color: var(--border-color); border-radius: var(--radius-lg); height: 100%; min-height: 450px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); overflow: hidden; }
+        .format-callout { background-color: #E8F0E3; color: #3F522E; font-weight: 600; padding: 0.75rem; border-radius: var(--radius-md); font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; border: 1px solid #D1DFCA;}
+
+        /* Cards */
+        .card { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .card-number { font-size: 2.5rem; font-weight: 800; color: var(--bg-alt); margin-bottom: 1rem; line-height: 1; }
+        .disclaimer-label { display: inline-block; background: var(--bg-alt); color: var(--text-light); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; margin-top: 1rem; text-transform: uppercase; }
+
+        /* Review Cards */
+        .review-card { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; display: flex; flex-direction: column;}
+        .review-header { display: flex; align-items: center; margin-bottom: 1rem; }
+        .reviewer-info { margin-left: 1rem; }
+        .reviewer-name { font-weight: 700; color: var(--text-dark); }
+        .reviewer-meta { font-size: 0.8rem; color: var(--text-muted); }
+        .review-text { font-style: italic; color: var(--text-light); flex-grow: 1; margin-bottom: 1.5rem;}
+        
+        /* Critical Alerts */
+        .alert-box { background-color: var(--alert-bg); border: 1px solid var(--alert-border); border-left: 4px solid var(--alert-text); padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 2rem 0;}
+        .alert-box h4 { color: var(--alert-text); margin-bottom: 0.5rem; font-size: 1.1rem;}
+        .alert-box p { color: var(--text-dark); margin: 0; font-size: 0.95rem;}
+        
+        .callout-box { background-color: var(--bg-alt); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+        .callout-box p { color: var(--text-dark); font-weight: 500; margin: 0; }
+        .mechanism-card { border-left: 4px solid var(--primary); padding-left: 1.5rem; margin-bottom: 2rem; }
+
+        /* Pricing */
+        .pricing-card { display: flex; flex-direction: column; height: 100%; text-align: center; }
+        .pricing-highlight { border: 2px solid var(--primary); transform: scale(1.05); }
+        @media (max-width: 768px) { .pricing-highlight { transform: scale(1); } }
+        .pricing-badge { background: var(--primary); color: white; padding: 0.25rem 1rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 0 0 var(--radius-md) var(--radius-md); display: inline-block; margin: -2rem auto 1rem; }
+        .price-display { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); margin: 1.5rem 0; }
+        .pricing-features { text-align: left; margin-bottom: 2rem; flex-grow: 1; }
+        .pricing-features li { margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: start; }
+        .pricing-features li::before { content: "✓"; color: var(--accent); margin-right: 0.5rem; font-weight: bold; }
+        .guarantee-note { font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; display: block; }
+        
+        /* Table */
+        .table-responsive { overflow-x: auto; margin-top: 2rem; }
+        table { width: 100%; border-collapse: collapse; background: var(--bg-white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { background: var(--bg-alt); font-weight: 600; color: var(--text-dark); }
+        td { color: var(--text-light); font-size: 0.9rem; }
+        .table-disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; font-style: italic; }
+
+        /* FAQ */
+        .accordion-item { border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; background: var(--bg-white); }
+        .accordion-header { width: 100%; text-align: left; padding: 1.25rem; font-size: 1rem; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-dark); }
+        .accordion-content { padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .accordion-content p { padding-bottom: 1.25rem; margin: 0; }
+        
+        /* Guarantee Box */
+        .guarantee-box { background-color: var(--bg-white); border: 2px solid var(--primary); border-radius: var(--radius-lg); padding: 2rem; text-align: center; margin: 3rem auto; max-width: 800px; box-shadow: var(--shadow-md); }
+        .guarantee-box h3 { color: var(--text-dark); }
+        
+        /* Footer */
+        footer { background-color: #231812; color: #F4EBE1; padding: 4rem 0 2rem; }
+        footer a { color: #C6B5A7; transition: color 0.2s; }
+        footer a:hover { color: #FFFFFF; }
+        footer h4 { color: #FFFFFF; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        footer p { color: #A89B8F; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-disclaimer { border-top: 1px solid #3F2E23; padding-top: 2rem; text-align: center; font-size: 0.8rem; color: #A89B8F; }
+        .secure-checkout { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; background: #110B08; padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; color: #D4E1C6; font-weight: 600; border: 1px solid #3F2E23;}
+        
+        @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">MetaboDrops</a>
+            <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#ingredients">Ingredients</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#guarantee">Guarantee</a>
+                <span class="nav-disclaimer">(illustrative)</span>
+                <a href="order.html" class="btn btn-primary">Order Now </a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero">
+        <div class="container grid-2">
+            <div>
+                <span class="badge-text">METABOLISM SUPPORT • HABIT-STACKING • DAILY WELLNESS</span>
+                <h1>MetaboDrops™ — Liquid Metabolism Drops for Your Morning Coffee</h1>
+                <h3>A tasteless liquid supplement designed to support metabolism, steady energy, and appetite awareness — added directly to the coffee or tea you already drink.</h3>
+                
+                <div class="format-callout">
+                    30 mL dropper bottle | 30 servings | Tasteless & fast-dissolving | Plant-based | Non-GMO | Soy-free | Dairy-free | Non-habit-forming
+                </div>
+
+                <p>MetaboDrops is a liquid dietary supplement marketed as a metabolism-support serum designed to be added directly to coffee, tea, or water. The product is sold in a 30 mL dropper bottle providing 30 servings, with a recommended dose of one dropper full stirred into a morning beverage. It is positioned as a tasteless, fast-dissolving, plant-based formula that is non-GMO, soy-free, dairy-free, and non-habit-forming — an appealing profile for people who dislike swallowing capsules or using harsh thermogenic stimulants.</p>
+                
+                <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--primary);">
+                    <span>✓ Metabolism Support</span>
+                    <span>✓ Steady Energy</span>
+                    <span>✓ Appetite Awareness</span>
+                    <span>✓ Calm Focus</span>
+                    <span>✓ Habit-Stacking Convenience</span>
+                    <span>✓ Low-Stimulant</span>
+                </div>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="#pricing" class="btn btn-primary">Explore MetaboDrops</a>
+                    <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+                </div>
+                <p class="hero-disclaimer">*MetaboDrops is a dietary supplement marketed for metabolism-support wellness. It is not a medicine or a treatment for any medical condition. Individual experiences vary.</p>
+            </div>
+            <div>
+                <!-- Image Placeholder for Hero -->
+                <div class="hero-image-placeholder">
+                    <img src="images/Metabo-Drops-main.webp" alt="MetaboDrops 30mL Dropper Bottle" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. "What Are MetaboDrops?" Section -->
+    <section class="section-alt" id="about">
+        <div class="container grid-2">
+            <div>
+                <span class="section-label">GET TO KNOW THE PRODUCT</span>
+                <h2>What Are MetaboDrops? Liquid Metabolism Support for Your Daily Routine</h2>
+                <p style="margin-bottom: 2rem;">MetaboDrops is a liquid dietary supplement marketed as a metabolism-support serum designed to be added directly to coffee, tea, or water. The product is sold in a 30 mL dropper bottle providing 30 servings, with a recommended dose of one dropper full stirred into a morning beverage.</p>
+                
+                <h3 style="font-size: 1.25rem;">Product Format and Positioning</h3>
+                <p>It is positioned as a tasteless, fast-dissolving, plant-based formula that is non-GMO, soy-free, dairy-free, and non-habit-forming — an appealing profile for people who dislike swallowing capsules or using harsh thermogenic stimulants. The brand behind the product is Adonis Lifestyle LLC, based in Durham, North Carolina, and all orders are processed through ClickBank.</p>
+                
+                <h3 style="font-size: 1.25rem;">Manufacturing and Quality Standards</h3>
+                <p>From a manufacturing standpoint, MetaboDrops is described as produced in the United States in a facility that is FDA-registered and GMP-certified. This means the facility meets basic quality and sanitation standards and is subject to regulatory oversight for labeling and ingredient handling — though it is important to note that FDA registration does not equate to FDA approval of the product's claims or effectiveness. The product is sold exclusively through the official website rather than mass retail, which the brand frames as a way to maintain controlled distribution and direct customer support.</p>
+                
+                <h3 style="font-size: 1.25rem;">Realistic Positioning Statement</h3>
+                <p>The product should be understood as a gentle metabolic support tool rather than a clinically proven fat-burner, and results are described by reviewers as modest and heavily dependent on consistency and lifestyle foundations.</p>
+            </div>
+            <div>
+                <div class="alert-box">
+                    <h4>Formula Transparency Caveat</h4>
+                    <p>A significant transparency caveat surrounds the formula itself. The label lists a proprietary blend of green tea extract, green coffee bean extract, L-carnitine, and L-theanine, alongside disclosed vitamin and mineral amounts — including Vitamin D at 20 mcg (100% DV), Vitamin B6 at 1 mg (59% DV), Vitamin B12 at 5 mcg, and chromium at 20 mcg. However, the exact milligram doses of the botanical and amino-acid ingredients are not disclosed, either on the sales page or on the label. Independent reviewers consistently flag this as a limitation: without transparent dosing, consumers cannot verify whether the blend matches the amounts used in published ingredient-level research.</p>
+                </div>
+
+                <div style="background-color: var(--bg-main); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.25rem;">Who Is MetaboDrops Marketed Toward?</h3>
+                    <p>MetaboDrops is marketed toward adults who are interested in metabolism-support supplements and general wellness — particularly those who already drink coffee or tea daily and want a simple, low-effort addition to their existing routine. Anyone considering the product should check the current packaging, review the complete ingredient declaration and make sure the available product information is suitable for their individual needs.</p>
+                    
+                    <div class="callout-box" style="margin-bottom: 0;">
+                        <p>MetaboDrops is presented as a liquid metabolism-support supplement. Review the actual product label, understand its directions and consider your individual health circumstances before making a decision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. "How Do MetaboDrops Work?" Section -->
+    <section id="how-it-works">
+        <div class="container" style="max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-label">THE SCIENCE BEHIND THE FORMULA</span>
+                <h2>How Do MetaboDrops Work? The "Coffee Synergy" Concept</h2>
+                <p>MetaboDrops is marketed around a "coffee synergy" concept: rather than asking users to add another pill to their day, the drops are designed to stack onto an existing morning coffee or tea habit. The brand argues that pairing metabolic nutrients with a beverage people already drink daily improves adherence — a behavioural point that is practically relevant, since consistency is essential for any metabolism-oriented supplement to produce noticeable effects.</p>
+            </div>
+
+            <div style="background: var(--bg-white); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 2rem;">
+                <h3 style="font-size: 1.1rem;">The Habit-Stacking Advantage</h3>
+                <p style="margin: 0; font-size: 0.95rem;">The liquid format is also promoted as offering faster absorption than capsules, as liquids do not require the same breakdown and digestion process before active compounds begin entering the system.</p>
+            </div>
+
+            <div class="mechanism-card">
+                <h3>Mechanism 1: Thermogenesis and Fat Oxidation</h3>
+                <p>Green tea extract (EGCG) and green coffee bean extract (chlorogenic acid) are included to support thermogenesis and fat oxidation — the process by which the body burns calories to produce heat — with research suggesting modest but consistent effects when used daily.</p>
+            </div>
+
+            <div class="mechanism-card">
+                <h3>Mechanism 2: Cellular Energy Transport</h3>
+                <p>L-carnitine plays a supporting metabolic role by transporting fatty acids into the mitochondria, where they can be converted into usable energy, while chromium picolinate is included for its role in insulin signalling and blood sugar regulation, which can indirectly influence appetite stability and cravings.</p>
+            </div>
+
+            <div class="mechanism-card">
+                <h3>Mechanism 3: Calm Focus and Energy Metabolism</h3>
+                <p>The formula also contains L-theanine, an amino acid that smooths out the edges of caffeine and supports calm focus, and B-vitamins, which are essential for cellular energy production and the conversion of food into fuel.</p>
+            </div>
+
+            <div class="alert-box">
+                <h4>Critical Context Callout</h4>
+                <p>A key limitation — and one that independent reviewers emphasise — is that the product's marketing leans on ingredient-level studies, not clinical trials of the finished MetaboDrops formula itself. The "metabolic inequality" framing (the idea that a large share of the population has inherited a slower metabolism) references a real and well-documented concept of individual metabolic variation, but the specific term is a marketing framework rather than a recognised medical diagnosis, and the statistics cited on the sales page are not directly linked to published studies.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-weight: 500; color: var(--text-dark);">The practical takeaway is that MetaboDrops is best approached as a habit-stacking aid that may gently support metabolic efficiency, energy stability, and appetite awareness — not as a standalone solution that can override dietary quality, movement, sleep, or medical factors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. "Key Ingredients" Section -->
+    <section class="section-alt" id="ingredients">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">FORMULA TRANSPARENCY MATTERS</span>
+                <h2>MetaboDrops Key Ingredients and Formula Information</h2>
+                <p>The ingredient strategy in MetaboDrops centres on metabolic efficiency and appetite stability rather than aggressive stimulation.</p>
+            </div>
+
+            <div class="grid-2" style="gap: 3rem;">
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1.25rem;">Green Tea Extract (EGCG)</h3>
+                    <p>Standardised for EGCG, green tea extract is one of the most studied natural compounds in metabolism research and has been shown to support fat oxidation and thermogenesis, particularly during light activity and rest.</p>
+
+                    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 1.5rem;">Green Coffee Bean Extract (Chlorogenic Acid)</h3>
+                    <p>Contributes chlorogenic acids, which may slow glucose absorption in the digestive tract and support more stable post-meal blood sugar levels — an indirect pathway to steadier energy and reduced crashes.</p>
+
+                    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 1.5rem;">L-Carnitine</h3>
+                    <p>An amino acid that helps shuttle fatty acids into the mitochondria for conversion into energy; without adequate carnitine activity, fat cannot be efficiently utilised as fuel, and supplementation may be particularly relevant for individuals with lower baseline levels due to diet or age.</p>
+
+                    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 1.5rem;">Chromium Picolinate (20 mcg)</h3>
+                    <p>Included as a trace mineral involved in insulin sensitivity and macronutrient metabolism, with evidence suggesting it may help regulate blood sugar swings that drive sudden hunger spikes and carb cravings.</p>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1.25rem;">L-Theanine</h3>
+                    <p>An amino acid that smooths out the edges of caffeine and supports calm focus — included partly to reduce the likelihood of jitters from the caffeine naturally present in coffee and green tea extract.</p>
+
+                    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 1.5rem;">B-Vitamin Complex</h3>
+                    <p>Vitamin D (20 mcg / 100% DV), Vitamin B6 (1 mg / 59% DV), and Vitamin B12 (5 mcg). Essential for cellular energy production and the conversion of food into fuel — nutrients that do not burn fat directly but help ensure the metabolic pathways targeted by the other ingredients can function efficiently.</p>
+                    
+                    <div class="alert-box" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4>Proprietary Blend Transparency Callout</h4>
+                        <p>The label lists a proprietary blend, which discloses total blend weight but not individual botanical and amino-acid dosages. The exact milligram doses of green tea extract, green coffee bean extract, L-carnitine, and L-theanine are not disclosed. Independent reviewers consistently flag this as a limitation: without transparent dosing, consumers cannot verify whether the blend matches the amounts used in published ingredient-level research.</p>
+                    </div>
+
+                    <div class="callout-box" style="margin-top: 0; background-color: #E8F0E3; border-left-color: var(--success);">
+                        <p style="color: #3F522E;"><strong>The Honest Interpretation:</strong> MetaboDrops provides supportive, not transformative, nutritional cover for a metabolism-focused routine; it is not a shortcut around a sustained calorie deficit or consistent daily habits.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Safety Info Block -->
+            <div style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 2rem; border-radius: var(--radius-lg); margin-top: 3rem;">
+                <h3 style="color: var(--primary); font-size: 1.25rem; margin-bottom: 1rem;">Safety Information and Responsible Use</h3>
+                <p>MetaboDrops is described by the manufacturer as plant-based, non-GMO, and manufactured in an FDA-registered, GMP-certified facility, and independent reviewers describe the ingredient profile as broadly standard for the metabolism-support category, with relatively few reports of severe adverse reactions. That said, "natural" does not automatically mean risk-free. Green tea extract and green coffee bean contain caffeine, and some users report mild stomach discomfort when the drops are taken without food, as well as occasional jitteriness in caffeine-sensitive individuals. Concentrated green tea extracts have also been associated with rare liver problems in certain formulations or when taken on an empty stomach.</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">Dietary supplements are not substitutes for medical diagnosis or treatment. MetaboDrops is not intended to diagnose, treat, cure or prevent any disease or medical condition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. "Benefits" Section -->
+    <section id="benefits">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">WHAT THE FORMULA IS DESIGNED TO SUPPORT</span>
+                <h2>Benefits of MetaboDrops</h2>
+                <p>Based on the product's ingredient profile and marketing positioning, the following benefits are associated with MetaboDrops. These are not guaranteed outcomes and individual experiences vary.</p>
+            </div>
+
+            <div class="grid-2">
+                <ul class="pricing-features" style="margin-bottom: 0;">
+                    <li><strong>Habit-stacking convenience</strong> — designed to be added to coffee or tea, making daily use easy to remember and sustain.</li>
+                    <li><strong>Liquid delivery format</strong> — may support faster absorption compared with capsules that require digestive breakdown.</li>
+                    <li><strong>Low-stimulant positioning</strong> — formulated to avoid the jitters and crashes associated with high-caffeine fat burners.</li>
+                    <li><strong>Green tea extract (EGCG)</strong> included for its studied role in fat oxidation and thermogenesis.</li>
+                    <li><strong>Green coffee bean extract</strong> provides chlorogenic acids that may support more stable post-meal blood sugar.</li>
+                </ul>
+                <ul class="pricing-features" style="margin-bottom: 0;">
+                    <li><strong>L-carnitine</strong> supports the transport of fatty acids into mitochondria for energy conversion.</li>
+                    <li><strong>Chromium picolinate</strong> included for insulin signalling support and appetite awareness.</li>
+                    <li><strong>L-theanine</strong> helps smooth out caffeine's edges and support calm focus alongside coffee.</li>
+                    <li><strong>B-vitamin complex (B6, B12, D)</strong> supports cellular energy production and nervous system function.</li>
+                    <li><strong>60-day money-back guarantee</strong> through ClickBank provides a risk-reversal window for first-time buyers.</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 2rem; font-style: italic;">These benefit statements describe the product's marketing positioning and ingredient profile. They are not guarantees of specific results. Individual experiences vary based on diet, activity, sleep, stress and overall health.</p>
+        </div>
+    </section>
+
+    <!-- 6. "Product Research Guide" Section -->
+    <section class="section-alt">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">YOUR PRODUCT RESEARCH GUIDE</span>
+                <h2>Four Simple Steps for Evaluating MetaboDrops</h2>
+                <p>Choosing a metabolism-support supplement requires more than looking at its advertised positioning. If you are considering MetaboDrops as part of your wellness routine, these practical steps can help you review the product information carefully.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 1: Examine the Ingredients</h3>
+                    <p style="font-size: 0.9rem;">Review the latest MetaboDrops Supplement Facts panel. Check ingredient names, quantities, serving size and other information provided on the package. Note that the formula uses a proprietary blend, which discloses total blend weight but not individual botanical and amino-acid dosages. Verify the disclosed vitamin and mineral amounts.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 2: Read the Usage Details</h3>
+                    <p style="font-size: 0.9rem;">The label directions specify one dropper full (1 mL) added to morning coffee, tea, or water, and the bottle contains 30 servings, making it a 30-day supply at the standard dose. Follow the current label rather than relying on assumptions, and do not assume that taking extra drops will produce faster results.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 3: Compare Purchase Options</h3>
+                    <p style="font-size: 0.9rem;">Compare package quantities, total prices, shipping charges and the final checkout amount. <strong>Critically, screenshot the checkout page and read every line of the order summary to confirm whether you are enrolling in a subscription before entering payment details</strong> — independent reviewers have raised concerns about recurring billing on some offers.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem; background-color: var(--alert-bg); border-color: var(--alert-border);">
+                    <h3 style="color: var(--alert-text); font-size: 1.1rem;">Step 4: Consider Your Health</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dark);">Consult a professional if taking meds, pregnant/nursing, or stacking with other caffeine/thermogenics. <strong>People with diabetes, prediabetes, unstable blood sugar, or those taking glucose-lowering medication should not use MetaboDrops without direct medical guidance.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. "Comparison" Section -->
+    <section id="comparison">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">MAKE A WELL-INFORMED CHOICE</span>
+                <h2>How to Evaluate MetaboDrops Against Other Metabolism Supplements</h2>
+                <p>Products in the metabolism-support category may differ in their ingredients, serving formats, label transparency and purchase conditions. Use the points below as a general guide when comparing MetaboDrops with other available supplement options.</p>
+            </div>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Evaluation Factor</th>
+                            <th>MetaboDrops</th>
+                            <th>Other Metabolism Supplement</th>
+                            <th>Single-Ingredient Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Main Product Category</strong></td>
+                            <td>Liquid metabolism-support wellness</td>
+                            <td>Depends on the individual product</td>
+                            <td>Depends on the selected ingredient</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Format</strong></td>
+                            <td>30 mL liquid dropper bottle (30 servings)</td>
+                            <td>Capsules, tablets, powders, liquids</td>
+                            <td>Varies by product</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price Per Serving</strong></td>
+                            <td>Calculate from current price and serving size</td>
+                            <td>Varies by brand and package</td>
+                            <td>Varies by product</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ingredient Disclosure</strong></td>
+                            <td>Proprietary blend (total weight disclosed, individual botanical dosages not listed); vitamins and minerals disclosed</td>
+                            <td>Depends on manufacturer</td>
+                            <td>Check product packaging</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ingredient Quantities</strong></td>
+                            <td>Vitamin D 20 mcg, B6 1 mg, B12 5 mcg, chromium 20 mcg disclosed; botanical blend amounts not disclosed</td>
+                            <td>Disclosure varies</td>
+                            <td>Check the stated amount</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stimulant Content</strong></td>
+                            <td>Low-stimulant positioning; contains caffeine from green tea and green coffee bean extracts</td>
+                            <td>Varies — some are high-stimulant</td>
+                            <td>Depends on ingredient</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subscription Risk</strong></td>
+                            <td><strong>Independent reviews report recurring billing may be pre-selected at checkout</strong></td>
+                            <td>Varies by retailer</td>
+                            <td>Varies by retailer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quality Information</strong></td>
+                            <td>Manufactured in FDA-registered, GMP-certified facility</td>
+                            <td>Depends on manufacturer</td>
+                            <td>Depends on supplier</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Return Policy</strong></td>
+                            <td>60-day money-back guarantee via ClickBank</td>
+                            <td>Varies by retailer</td>
+                            <td>Varies by retailer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shipping Charges</strong></td>
+                            <td>Confirm during checkout</td>
+                            <td>Depends on delivery terms</td>
+                            <td>Depends on delivery terms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Supporting Information</strong></td>
+                            <td>Ingredient-level research only; no clinical trial of finished formula</td>
+                            <td>Depends on product evidence</td>
+                            <td>Depends on ingredient research</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-disclaimer">This table is a general research guide, not an independent laboratory test, clinical comparison or verified product ranking. Confirm current formula details, prices and policies with the seller.</p>
+        </div>
+    </section>
+
+    <!-- 8. "Pricing" Section -->
+    <section class="section-alt" id="pricing">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">CHOOSE YOUR PACKAGE SIZE</span>
+                <h2>MetaboDrops Pricing, Package Quantities and Available Offers</h2>
+                <p>Review the available MetaboDrops package options and confirm the current price, shipping details and final order total on the seller's checkout page.</p>
+            </div>
+
+            <div class="alert-box" style="margin: 0 auto 3rem; max-width: 900px; border-radius: var(--radius-md); border-left: 4px solid var(--alert-text);">
+                <h4 style="text-transform: uppercase;">IMPORTANT BILLING WARNING</h4>
+                <p>Independent reviews have raised concerns about the checkout structure. MetaboDrops is sold through ClickBank, and at least one reviewer reports that the product has been offered at $177 per bottle with recurring billing — <strong>meaning a subscription or auto-ship arrangement may be pre-selected at checkout</strong> depending on the offer page you land on. Before entering payment details, screenshot the checkout page, read every line of the order summary, and confirm whether you are enrolling in a subscription. If the offer includes recurring billing, note the cancellation window and keep a record of the terms.</p>
+            </div>
+
+            <div class="grid-3" style="align-items: center;">
+                <!-- Starter Package -->
+                <div class="card pricing-card">
+                    <div style="background: var(--bg-alt); height: 150px; display: flex; align-items: center; justify-content: center; margin: -2rem -2rem 1.5rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;">
+                        <img src="images/Metabo-Drops-order-2-bottle.webp" alt="Starter Package - 2 Bottle" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="quantity-badge" style="font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem;">1 BOTTLE</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">STARTER PACKAGE</h3>
+                    
+                    <ul class="pricing-features">
+                        <li>30 mL dropper bottle (30 servings)</li>
+                        <li>See Current Offer</li>
+                        <li>Check Price Per Bottle</li>
+                        <li>Review Current Return Policy</li>
+                        <li>Confirm Package Details</li>
+                        <li style="color: #991B1B; font-weight: 600;">Confirm billing terms at checkout</li>
+                    </ul>
+                    
+                    <div class="price-display">TOTAL: Check Checkout</div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Confirm Shipping at Checkout</p>
+                    <span class="guarantee-note" style="color: var(--text-dark);">60-Day Money-Back Guarantee via ClickBank</span>
+                    <button class="btn btn-outline btn-full"><a href="order.html">Order Now</a></button>
+                </div>
+
+                <!-- Popular Package -->
+                <div class="card pricing-card pricing-highlight">
+                    <span class="pricing-badge">Popular Choice</span>
+                    <div style="background: var(--bg-alt); height: 150px; display: flex; align-items: center; justify-content: center; margin: 0 -2rem 1.5rem; overflow: hidden;">
+                         <img src="images/Metabo-Drops-order-3-bottle.webp" alt="Popular Package - 3 Bottles" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="quantity-badge" style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">3 BOTTLES</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">POPULAR PACKAGE</h3>
+                    
+                    <ul class="pricing-features">
+                        <li>30 mL dropper bottle per unit (30 servings each)</li>
+                        <li>See Current Offer</li>
+                        <li>Check Price Per Bottle</li>
+                        <li>Review Current Return Policy</li>
+                        <li>Confirm Package Details</li>
+                        <li style="color: #991B1B; font-weight: 600;">Confirm billing terms at checkout</li>
+                    </ul>
+                    
+                    <div class="price-display" style="color: var(--primary);">TOTAL: Check Checkout</div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Confirm Shipping at Checkout</p>
+                    <span class="guarantee-note" style="color: var(--text-dark);">60-Day Money-Back Guarantee via ClickBank</span>
+                    <button class="btn btn-primary btn-full"><a href="order.html">Order Now</a></button>
+                </div>
+
+                <!-- Value Package -->
+                <div class="card pricing-card">
+                    <div style="background: var(--bg-alt); height: 150px; display: flex; align-items: center; justify-content: center; margin: -2rem -2rem 1.5rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;">
+                         <img src="images/Metabo-Drops-order-6-bottle.webp" alt="Value Package - 6 Bottles" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="quantity-badge" style="font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem;">6 BOTTLES</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">VALUE PACKAGE</h3>
+                    
+                    <ul class="pricing-features">
+                        <li>30 mL dropper bottle per unit (30 servings each)</li>
+                        <li>See Current Offer</li>
+                        <li>Check Price Per Bottle</li>
+                        <li>CHECK AVAILABLE OFFER</li>
+                        <li>Review Current Return Policy</li>
+                        <li>Confirm Package Details</li>
+                        <li style="color: #991B1B; font-weight: 600;">Confirm billing terms at checkout</li>
+                    </ul>
+                    
+                    <div class="price-display">TOTAL: Check Checkout</div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Confirm Shipping at Checkout</p>
+                    <span class="guarantee-note" style="color: var(--text-dark);">60-Day Money-Back Guarantee via ClickBank</span>
+                    <button class="btn btn-outline btn-full"><a href="order.html">Order Now </a></button>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 3rem; font-style: italic;">Package prices and quantities must be confirmed on the official checkout page. Offers may change. Confirm current availability, shipping charges, package details and final charges before ordering.</p>
+        </div>
+    </section>
+
+    <!-- 9. "Money-Back Guarantee" Section -->
+    <section id="guarantee">
+        <div class="container">
+            <div class="guarantee-box">
+                <span class="section-label" style="justify-content: center;">ORDER WITH CONFIDENCE</span>
+                <h3 style="margin-bottom: 1.5rem;">Does MetaboDrops Have a Money-Back Guarantee?</h3>
+                <p style="margin-bottom: 1rem; color: var(--text-dark); text-align: left;">Yes — MetaboDrops purchases through the official ClickBank checkout are covered by ClickBank's standard 60-day money-back guarantee. This is a genuine risk-reversal window, but there is an important operational detail that distinguishes it from a simple vendor-issued refund: <strong>because ClickBank handles the sale as the authorised payment processor, customers can request a refund directly through clkbank.com using their order number, without needing to go through the vendor's customer support at all.</strong></p>
+                
+                <div style="background-color: var(--bg-main); padding: 1.5rem; text-align: left; border-radius: var(--radius-md); margin-top: 1.5rem;">
+                    <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Important Details:</h4>
+                    <ul style="font-size: 0.9rem; color: var(--text-light); list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Independent reviewers describe this route as particularly valuable in the supplement category, where vendor support is often email-only and slow to respond.</li>
+                        <li style="margin-bottom: 0.5rem;">To use the guarantee effectively, buyers should <strong>keep both the order number and the email address used at checkout</strong> — ClickBank requires both to process a refund request.</li>
+                        <li style="margin-bottom: 0.5rem;">One reviewer specifically recommends treating the 60-day window as a label-inspection period: order the product, read the full Supplement Facts panel when it arrives, and decide whether the hidden proprietary blend doses justify the price before the refund window closes.</li>
+                        <li>Given the recurring-billing concerns reported by independent reviewers, the guarantee is also a safeguard against unintended subscription charges — <strong>but only if the buyer actively monitors the 60-day window and initiates the refund process rather than assuming it will happen automatically.</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <span class="section-label">READ THE TERMS</span>
+                <h3 style="margin-bottom: 1rem;">Understand MetaboDrops Purchase and Return Policy</h3>
+                <p>Before placing an order, take a moment to review the terms provided by the MetaboDrops seller. Check your selected package, the total purchase amount, shipping fees, estimated delivery information and the conditions that apply after purchase.</p>
+                <p>Carefully read the seller's written return and refund policy. Pay attention to the applicable time period, product eligibility, return instructions, refund method and any additional costs. Keep your order confirmation and refer to the seller's published contact details if you need help.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. "Customer Reviews" Section -->
+    <section class="section-alt" id="reviews">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">WHAT USERS ARE SAYING</span>
+                <h2>MetaboDrops Customer Reviews</h2>
+                <p style="font-style: italic;">The following reviews are illustrative examples of customer experiences based on common feedback themes, not verified testimonials. Individual results vary. These are not guarantees of specific outcomes.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="review-card">
+                    <div class="review-text">
+                        "I have tried capsule fat burners before and hated the jittery, wired feeling, so the low-stimulant positioning of MetaboDrops is what made me willing to try a liquid drop instead. I added one dropper to my morning coffee for about six weeks, and the first thing I noticed was that my energy felt steadier through the afternoon — no crash, no shaking, just a smoother baseline. My appetite was not dramatically suppressed, but the late-afternoon sugar cravings that usually derail me were noticeably quieter, which made it easier to stick to my meal plan. I did not lose a huge amount of weight, but my waistband felt less tight and my digestion seemed more regular, which kept me motivated. I would describe it as gentle support rather than a dramatic transformation, and I would recommend it to anyone who wants to build on habits they already have rather than add another complicated routine."
+                    </div>
+                    <div class="review-header" style="margin-bottom: 0; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <div class="reviewer-info" style="margin-left: 0;">
+                            <div class="reviewer-name">Melissa T., 44</div>
+                            <div class="reviewer-meta">Female</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-text">
+                        "I was drawn to MetaboDrops because I already drink two cups of coffee every morning, and the idea of turning that habit into a metabolism-support routine made practical sense to me. The drops are genuinely tasteless, which I appreciated, and I did not experience any stomach upset as long as I took them with food or in the coffee rather than on an empty stomach. Over about two months, my weight drifted down modestly — nothing dramatic, but enough for my jeans to fit better — and the bigger change was that my mid-morning energy dip largely disappeared. I was skeptical about the proprietary blend hiding the doses, and I still think that is a fair criticism, but for me the convenience and the steadier energy made it worth testing within the refund window. I would not call it a fat burner in the aggressive sense; it is more of a supporting habit that made my existing routine feel more effective."
+                    </div>
+                    <div class="review-header" style="margin-bottom: 0; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <div class="reviewer-info" style="margin-left: 0;">
+                            <div class="reviewer-name">James R., 39</div>
+                            <div class="reviewer-meta">Male</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-text">
+                        "I chose MetaboDrops after reading that it was plant-based and designed to be mixed into tea, since I do not drink coffee and wanted something I could actually incorporate into my day. I used it in warm water with lemon every morning for around eight weeks, and the most noticeable shift was in my cravings — I was snacking less in the evenings without actively white-knuckling it, and my energy in the first half of the day felt more consistent. I did experience some mild stomach discomfort in the first few days when I took it without food, but that resolved once I started taking it after breakfast. I did not see rapid weight loss, and I think anyone expecting a quick fix will be disappointed, but as a gentle support alongside home-cooked meals and daily walks, it helped me stay consistent. I would recommend it to someone who wants a simple, low-effort addition to an existing routine and is willing to give it several weeks to see subtle changes."
+                    </div>
+                    <div class="review-header" style="margin-bottom: 0; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <div class="reviewer-info" style="margin-left: 0;">
+                            <div class="reviewer-name">Aisha K., 36</div>
+                            <div class="reviewer-meta">Female</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 2rem; font-style: italic;">These reviews reflect illustrative individual experiences and are not verified by independent laboratory testing. MetaboDrops does not guarantee specific weight-loss results. Always consult a healthcare professional before starting a new supplement.</p>
+        </div>
+    </section>
+
+    <!-- 11. "FAQ" Section -->
+    <section id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-label">HELPFUL PRODUCT INFORMATION</span>
+                <h2>MetaboDrops Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What are MetaboDrops and what category does it belong to?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>MetaboDrops is a liquid dietary supplement marketed as a metabolism-support serum designed to be added directly to coffee, tea, or water. It belongs to the metabolism and weight-management supplement category and is sold in a 30 mL dropper bottle providing 30 servings.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What are the main ingredients?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>The primary ingredients include green tea extract (EGCG), green coffee bean (chlorogenic acid), L-carnitine, chromium picolinate (20 mcg), L-theanine, and a B-vitamin complex (Vitamin D 20 mcg, Vitamin B6 1 mg, Vitamin B12 5 mcg). The exact individual dosages of the botanical and amino-acid ingredients are not disclosed on the label due to the use of a proprietary blend.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How do MetaboDrops work?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>The formula is designed to support metabolic efficiency, energy utilization, and appetite balance by combining ingredients that may support fat oxidation, blood sugar metabolism, and calm focus, particularly when paired with coffee. The "coffee synergy" concept is that pairing metabolic nutrients with a beverage people already drink daily improves adherence.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Are MetaboDrops a stimulant?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>It is positioned as a low-stimulant, plant-based option rather than a high-caffeine fat burner. However, it is not stimulant-free: green tea extract and green coffee bean extract naturally contain caffeine, and the product is designed to be taken with coffee, which adds further caffeine unless you use decaffeinated coffee. The L-theanine in the formula is included partly to smooth out caffeine's sharper edges and reduce the likelihood of jitters.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How long before I see results?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Independent user discussions and reviewer observations suggest that early changes — such as shifts in energy, appetite, and morning sluggishness — may become noticeable after two to four weeks of consistent daily use. More meaningful changes in body composition or cravings typically require several weeks to a few months of sustained use alongside dietary and lifestyle adjustments. Reviewers specifically advise committing to at least 60 days of consistent use — unless a side effect occurs — before judging whether it is working for you.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What is the recommended dosage?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>The label directions specify one dropper full (1 mL) added to morning coffee, tea, or water, and the bottle contains 30 servings, making it a 30-day supply at the standard dose. The drops are described as tasteless and fast-dissolving, so they should not alter the flavour of your beverage. Follow the instructions printed on the bottle you receive and do not assume that taking extra drops will produce faster results.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Does MetaboDrops have a money-back guarantee?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes — purchases through the official ClickBank checkout are covered by ClickBank's standard 60-day money-back guarantee. Customers can request a refund directly through clkbank.com using their order number and the email address used at checkout, without needing to go through the vendor's customer support.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" style="color: #991B1B;">
+                        Are there any subscription or hidden fees?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p><strong>This is a critical point.</strong> Independent reviews have raised concerns about the checkout structure. MetaboDrops is sold through ClickBank, and at least one reviewer reports that the product has been offered at $177 per bottle with recurring billing — <strong>meaning a subscription or auto-ship arrangement may be pre-selected at checkout depending on the offer page you land on.</strong> The 60-day refund window applies to the initial purchase; buyers must confirm billing terms at checkout and cancel any unwanted subscription separately to avoid further charges.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How safe are MetaboDrops?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>MetaboDrops is described by the manufacturer as plant-based, non-GMO, and manufactured in an FDA-registered, GMP-certified facility, and independent reviewers describe the ingredient profile as broadly standard for the metabolism-support category. That said, "natural" does not automatically mean risk-free. Green tea extract and green coffee bean contain caffeine, and some users report mild stomach discomfort when the drops are taken without food, as well as occasional jitteriness in caffeine-sensitive individuals. Concentrated green tea extracts have also been associated with rare liver problems in certain formulations or when taken on an empty stomach. Anyone who is pregnant, nursing, under 18, managing a medical condition, or taking prescription medication should consult a healthcare professional before use.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Can I use it with other supplements?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>In principle, yes — but the key risk is ingredient and stimulant overlap. If you already take a separate thermogenic, a high-dose green tea extract, a pre-workout, or another caffeinated metabolism product, stacking MetaboDrops on top can push total stimulant intake higher than intended. Because MetaboDrops is designed to be mixed into coffee, the caffeine from the beverage itself must also be factored in — especially if you drink multiple cups per day. If you take prescription medication, particularly for blood sugar, blood pressure, thyroid function, or blood thinning, professional guidance is advisable before adding any new supplement.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" style="color: #991B1B;">
+                        Is MetaboDrops suitable for people with diabetes?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>The product's terms reportedly advise people with diabetes not to participate in the program. Chromium, one of the ingredients, can interact with diabetes medication and other glucose-lowering drugs, and the formula has not been clinically tested in diabetic populations. <strong>If you have diabetes, prediabetes, unstable blood sugar, or take glucose-lowering medication, do not use MetaboDrops without direct medical guidance.</strong></p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Where can I buy MetaboDrops, and is the website legitimate?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>MetaboDrops is sold exclusively through its official website and processed via ClickBank. Some third-party website trust scanners have flagged certain MetaboDrops domains with low trust scores, so buyers should verify that they are on the official vendor page rather than a lookalike site. Purchasing through the official ClickBank checkout is important not only for product authenticity but also for accessing the refund guarantee, which is administered through ClickBank's standard process.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Who should speak with a healthcare professional before use?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>People who take medication, have allergies, are pregnant or breastfeeding, have ongoing health concerns, or are managing a medical condition should consult a qualified healthcare professional before using MetaboDrops or any new supplement. This is especially important for those with diabetes, high blood pressure, arrhythmia, thyroid conditions, or those taking blood-thinning medication.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Can MetaboDrops replace diet and exercise?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>No. The product is positioned as a supportive tool and is not a replacement for balanced nutrition, regular physical activity, or professional medical guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Final CTA & Education Section -->
+    <section class="section-alt">
+        <div class="container grid-2" style="align-items: center;">
+            <div style="background: var(--bg-alt); padding: 3rem; border-radius: var(--radius-lg); text-align: center;">
+                <div style="height: 150px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; overflow: hidden; border-radius: var(--radius-md);">
+                    <img src="https://placehold.co/400x250/E6D5C3/594A42?text=3-Bottle+Package" alt="3-Bottle MetaboDrops Package" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h2>Explore a More Informed Approach to Your Metabolism Goals</h2>
+                <p>Explore the available MetaboDrops product information, advertised package sizes and current purchase details. The supplement is marketed toward adults interested in metabolism-support wellness and healthy lifestyle routines. Review the ingredients, serving directions and seller conditions before deciding whether to order.</p>
+                <a href="#pricing" class="btn btn-primary" style="margin-top: 1rem;">Explore MetaboDrops Offers</a>
+            </div>
+            
+            <div style="padding: 2rem;">
+                <span class="section-label">SUPPLEMENT EDUCATION & PRODUCT RESEARCH</span>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Metabolism Support, Healthy Habits, Supplement Labels and Responsible Product Use</h3>
+                <p>Researching a metabolism-support supplement involves more than reading its promotional description. Review the product label, ingredient quantities, serving directions and available seller information. For personal questions about metabolism, body weight, nutrition or health, speak with an appropriately qualified healthcare professional.</p>
+                
+                <hr style="border: 0; height: 1px; background: var(--border-color); margin: 2rem 0;">
+                
+                <h4 style="font-size: 1rem; color: var(--text-dark);">About This Product Information Page:</h4>
+                <p style="font-size: 0.85rem;">This page provides general information about MetaboDrops, a liquid dietary supplement marketed for metabolism-support wellness and general well-being. Product formula details, availability, prices and seller policies can change and should be confirmed using current product documentation. This content is educational and does not replace professional medical advice.</p>
+                
+                <h4 id="sources" style="font-size: 1rem; color: var(--text-dark); margin-top: 1.5rem;">Sources & References:</h4>
+                <ul style="font-size: 0.85rem; color: var(--text-light);">
+                    <li style="margin-bottom: 0.25rem;">• U.S. Food & Drug Administration — Dietary Supplements Guidance</li>
+                    <li style="margin-bottom: 0.25rem;">• Centers for Disease Control and Prevention — Healthy Weight and Growth</li>
+                    <li>• National Institutes of Health — Office of Dietary Supplements</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- III. Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; margin-bottom: 1rem;">MetaboDrops</div>
+                    <p>MetaboDrops is a liquid dietary supplement marketed for adults interested in metabolism support, healthy lifestyle habits and general wellness. Explore the available product information and review the current label and seller terms before purchasing. Individual experiences vary.</p>
+                    <a href="#pricing" class="btn btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Explore Packages</a>
+                </div>
+                
+                <!-- Product Guide 1 -->
+                <div>
+                    <h4>Product Guide</h4>
